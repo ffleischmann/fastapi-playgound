@@ -1,0 +1,19 @@
+version: '3.7'
+services:
+  main-api:
+    build:
+      context: .
+      target: main_api
+    volumes:
+      - ./app:/app
+    ports:
+      - "8000:8000"
+
+  dummy-api:
+    build:
+      context: .
+      target: dummy_api
+    volumes:
+      - ./dummy-api:/dummy-api
+    ports:
+      - "8001:8001"
